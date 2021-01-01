@@ -7,35 +7,36 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    
     <div class="upload">
         <h1>Image Upload to MongoDB</h1>
-    <form action="/" method="POST" enctype="multipart/form-data">
-        <div>
-            <label for="name">Image Title</label>
-            <input type="text" id="name" placeholder="Name"
-                   value="" name="name" required>
-        </div>
-        <div>
-            <label for="desc">Image Description</label>
-            <input type="text" id="desc" name="desc" value=""
-                      placeholder="Description" required>
-            </input>
-        </div>
-        <div>
-            <label for="image">Upload Image</label>
-            <input type="file" id="image"
-                   name="image" value="" required>
-        </div>
-        <div>
-            <button type="submit">Submit</button>
-        </div>
-    </form>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="name">Image Title</label>
+                <input type="text" id="name" placeholder="Name"
+                    value="" name="name" required autocomplete="false" spellcheck="false">
+            </div>
+            <div>
+                <label for="desc">Image Description</label>
+                <textarea rows="3" id="desc" name="desc" value=""
+                        placeholder="Description" required spellcheck="false">
+                </textarea>
+            </div>
+            <div>
+                <label for="image">Upload Image</label>
+                <input type="file" id="image"
+                    name="image" value="" required>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
     
-
     <hr>
 
     <div class="images">
+        <h1>Images in the Database</h1>
         <% items.forEach(image => { %>
         <div class="image">
             <form action="/delete" method="POST">
@@ -49,10 +50,6 @@
         <% }) %>
     </div>
 
-    <!-- <form action="/delete" method="POST">
-        <input type="text" name="test">
-        <button type="submit">Test</button>
-    </form> -->
 <script src="main.js"></script>
 </body>
 </html>

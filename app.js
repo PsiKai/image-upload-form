@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
+
+var imgModel = require('./model');
+
 require('dotenv').config();
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -32,7 +35,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({storage: storage});
 
-var imgModel = require('./model');
+
 
 app.get('/', (req, res) => {
     imgModel.find({}, (err, items) => {

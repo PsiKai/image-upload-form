@@ -1,25 +1,68 @@
+:root {
+  --white: #eeeeee;
+  --light: #686d76;
+  --contrast: #19d3da;
+  --dark: #373a40;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--dark);
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+button {
+  width: 100px;
+  background-color: var(--dark);
+  border: none;
+  outline: none;
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: opacity 200ms ease, box-shadow 200ms ease, width 200ms ease-in-out;
+}
+
+button:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  width: 200px;
+}
+
 .upload {
   margin: 1rem;
   padding: 0.5rem;
 }
 
 .upload form {
-  width: 500px;
-  margin: auto;
+  width: 450px;
+  max-width: 100%;
 }
 
-form div {
+.upload form div {
   margin: 1rem;
 }
 
 label {
   display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+hr {
+  width: 95%;
+  color: var(--light);
 }
 
 .images {
-  width: 100%;
-  /* display: flex; */
-  /* flex-direction: c; */
+  margin: 1rem;
+  padding: 0.5rem;
 }
 
 .image {
